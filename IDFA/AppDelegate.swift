@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  IDFA
 //
-//  Created by 野澤 一貴 on 2016/04/15.
+//  Created by Kazuki Nozawa on 2016/04/15.
 //  Copyright © 2016年 Kazuki Nozawa. All rights reserved.
 //
 
