@@ -25,7 +25,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         
         UIPasteboard.generalPasteboard().string = myIDFA.UUIDString
         
-        var av = UIAlertView(title: "IDFA", message:"IDFA copied", delegate: self, cancelButtonTitle: "ok")
+        var av = UIAlertView(title: "IDFA", message:"copied!!", delegate: self, cancelButtonTitle: "OK")
         av.show()
     }
 
