@@ -13,7 +13,24 @@
 		5D0BD7D71CC0C95800E6F2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0BD7D61CC0C95800E6F2D7 /* Assets.xcassets */; };
 		5D0BD7DA1CC0C95800E6F2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0BD7D81CC0C95800E6F2D7 /* LaunchScreen.storyboard */; };
 		5D0BD7E21CC0C9F800E6F2D7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0BD7E11CC0C9F800E6F2D7 /* AdSupport.framework */; };
+		5D80A48A1EFA0585009617EE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80A4891EFA0585009617EE /* iAd.framework */; };
+		5D80A48C1EFA05EA009617EE /* AdjustSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80A48B1EFA05EA009617EE /* AdjustSdk.framework */; };
+		5D80A48D1EFA05EA009617EE /* AdjustSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80A48B1EFA05EA009617EE /* AdjustSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D80A48E1EFA05EA009617EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D80A48D1EFA05EA009617EE /* AdjustSdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5D0BD7CC1CC0C95800E6F2D7 /* IDFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +41,8 @@
 		5D0BD7D91CC0C95800E6F2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D0BD7DB1CC0C95800E6F2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0BD7E11CC0C9F800E6F2D7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5D80A4891EFA0585009617EE /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		5D80A48B1EFA05EA009617EE /* AdjustSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdjustSdk.framework; path = Carthage/Build/iOS/AdjustSdk.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D80A48C1EFA05EA009617EE /* AdjustSdk.framework in Frameworks */,
+				5D80A48A1EFA0585009617EE /* iAd.framework in Frameworks */,
 				5D0BD7E21CC0C9F800E6F2D7 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,9 +62,11 @@
 		5D0BD7C31CC0C95800E6F2D7 = {
 			isa = PBXGroup;
 			children = (
+				5D80A48B1EFA05EA009617EE /* AdjustSdk.framework */,
 				5D0BD7E11CC0C9F800E6F2D7 /* AdSupport.framework */,
 				5D0BD7CE1CC0C95800E6F2D7 /* IDFA */,
 				5D0BD7CD1CC0C95800E6F2D7 /* Products */,
+				A2C12537B9D3EB09BE4E4FFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +91,14 @@
 			path = IDFA;
 			sourceTree = "<group>";
 		};
+		A2C12537B9D3EB09BE4E4FFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D80A4891EFA0585009617EE /* iAd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +109,7 @@
 				5D0BD7C81CC0C95800E6F2D7 /* Sources */,
 				5D0BD7C91CC0C95800E6F2D7 /* Frameworks */,
 				5D0BD7CA1CC0C95800E6F2D7 /* Resources */,
+				5D80A48E1EFA05EA009617EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -101,6 +133,7 @@
 					5D0BD7CB1CC0C95800E6F2D7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = A4EC29U6SK;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -258,11 +291,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = A4EC29U6SK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = IDFA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KN.IDFA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -272,11 +311,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = A4EC29U6SK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = IDFA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KN.IDFA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -299,6 +344,7 @@
 				5D0BD7E01CC0C95800E6F2D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,12 +20,12 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         
         //IDFA
         let myIDFA = ASIdentifierManager().advertisingIdentifier
-        idfaLabel.text = myIDFA.UUIDString;
-        print("myIDFA :\(myIDFA.UUIDString.utf8)")
+        idfaLabel.text = myIDFA?.uuidString;
+        print("myIDFA :\(String(describing: myIDFA?.uuidString.utf8))")
         
-        UIPasteboard.generalPasteboard().string = myIDFA.UUIDString
+        UIPasteboard.general.string = myIDFA?.uuidString
         
-        var av = UIAlertView(title: "IDFA", message:"copied!!", delegate: self, cancelButtonTitle: "OK")
+        let av = UIAlertView(title: "IDFA", message:"copied!!", delegate: self, cancelButtonTitle: "OK")
         av.show()
     }
 
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if (buttonIndex == alertView.cancelButtonIndex) {
             //Canceled
         }

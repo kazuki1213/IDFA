@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+    {
+      "hash" : "3c4d30cd5ab44dedd77c88233b54b25e90c7ddc300c1254b3d989eec37358307",
+      "name" : "AdjustSdk"
+    }
+  ],
+  "commitish" : "v4.11.4",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}
